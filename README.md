@@ -1,6 +1,6 @@
 I wrote this 13 years ago. It enables editing the graphics in NES games. Still works on modern JREs, at least on OSX.
 
-![screenshot](shttps://raw.githubusercontent.com/city41/jnesg/master/jnesg.png)
+![screenshot](https://raw.githubusercontent.com/city41/jnesg/master/jnesg.png)
 
 
 original README below
