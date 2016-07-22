@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<project name="JNesG" basedir="." default="compile">
+	<description>
+		build file for JNesG
+	</description>
+	<property name="src" location="."/>
+	<property name="out"  location="./out"/>
+	<property name="dist" location="./dist"/>
+	<property name="jnesg.version" value="0.3a" />
+	
+	<path id="master.classpath">
+ 	<pathelement location="src"/>
+    </path>
+
+
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp/>
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${out}"/>
+	</target>
+
+	<target name="compile" depends="init" description="compile the source " >
+		<!-- Compile the java code from ${src} into ${out} -->
+		<javac srcdir="${src}" destdir="${out}" classpath="src" debug="true"/>
+	</target>
+
+	<target name="run">
+		<!-- Run JNesG in a new JVM (otherwise application just quits as soon as it is loaded)-->
+		<java classname="jnesg.Main" classpath="${out}" fork="true">
+		</java>
+	</target>
+	
+	<target name="package-init">
+		<tstamp/>
+		<mkdir dir="${dist}"/>
+	</target>
+	
+	<target name="package" depends="package-init">
+		<jar destfile="${dist}/JNesG_${jnesg.version}.jar" basedir="${out}">
+			<manifest>
+				<attribute name="Built-By" value="Matt Greer"/>
+				<attribute name="Main-Class" value="jnesg.Main"/>
+			</manifest>
+		</jar>
+	</target>
+	
+	<target name="package-src">
+		<jar destfile="JNesG_src_${jnesg.version}.jar" basedir=".">
+			<manifest>
+				<attribute name="Built-By" value="Matt Greer"/>
+			</manifest>
+		</jar>
+	</target>	
+
+</project>
