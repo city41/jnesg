@@ -1,4 +1,4 @@
-I wrote this 13 years ago. It enables editing the graphics in NES games. Still works on modern JREs, at least on OSX.
+I wrote this in 2003. It enables editing the graphics in NES games. Still works on modern JREs, tested on OSX and Ubuntu.
 
 ![screenshot](https://raw.githubusercontent.com/city41/jnesg/master/jnesg.png)
 
